@@ -137,8 +137,8 @@
     &copy; 2025 Ken & Yui Wedding
   </footer>
 
-  <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4uUbTs8rnanrcfhXTo3DoXwy41ddhLFj0YqH8RDuIZ6NnZtVVgdaaT5Qmmyj6GIB9/exec"; // ←ここに貼ってください
+ <script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4uUbTs8rnanrcfhXTo3DoXwy41ddhLFj0YqH8RDuIZ6NnZtVVgdaaT5Qmmyj6GIB9/exec";
 
 document.getElementById("hasAllergy").addEventListener("change", function() {
   document.getElementById("allergyDetails").style.display = this.value === "はい" ? "block" : "none";
@@ -189,6 +189,9 @@ document.getElementById("rsvp-form").addEventListener("submit", async function(e
   try {
     const res = await fetch(SCRIPT_URL, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(formData),
     });
     const result = await res.json();

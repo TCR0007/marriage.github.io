@@ -1,0 +1,7 @@
+body {
+  font-family: 'Noto Serif JP', serif;
+  background-color: #fffaf4;
+  color: #333;
+  margin: 0;
+  scroll-behavior: smooth;
+}
